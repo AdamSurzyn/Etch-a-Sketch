@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(192, 223, 224);
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: xx-large;
+    color: #DF9FA0;
+    text-shadow: 0 0 4px rgb(27, 6, 6);
+}
+
+.ui-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 960px;
+    height: 960px;
+    border: solid black;
+    margin: 0px;
+}
