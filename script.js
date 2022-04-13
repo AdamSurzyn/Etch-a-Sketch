@@ -3,7 +3,6 @@ let container = document.getElementsByClassName('grid-container')[0];
 creatingGrid()
 styleRows()
 
-
 function creatingGrid(){
     for (i = 1; i <= 16; i++){
 
@@ -43,6 +42,7 @@ function styleRows(){
 
     let allRows = document.getElementsByClassName('grid-container')[0].children;
 
+
     const rowStyles = {
         display: 'flex',
         width: '100%',
@@ -67,6 +67,12 @@ function styleRows(){
             for (j = 0; j < allCols.length; j++){
 
                 Object.assign(allCols[j].style, colStyles)
+
+                allCols[j].addEventListener('mouseover', (e) =>{
+
+                    e.target.style.backgroundColor = 'black';
+                    
+                })
             }
     }
          
