@@ -2,23 +2,42 @@ let container = document.getElementsByClassName('grid-container')[0];
 
 let btn = document.getElementsByClassName('clear-button')[0];
 
-creatingGrid()
+creatingInitialGrid()
 styleRows()
 
 
 
-function creatingGrid(){
+function creatingInitialGrid(){
     for (i = 1; i <= 16; i++){
 
         createRow()
         
-
             for(j = 1; j <= 16; j++){
                 
                 createColumn()
 
             }
     }
+}
+
+function creatingDifferentGrid(n, m){
+    let gridSizeArray = gridSizing()
+
+    n = gridSizeArray[0];
+    m = gridSizeArray[1];
+
+     for (i = 1; i <= n; i++){
+
+        createRow()
+        
+            for(j = 1; j <= m; j++){
+                
+                createColumn()
+
+            }
+    }
+
+    styleRows()
 }
 
 function createRow(){
@@ -87,4 +106,20 @@ btn.addEventListener('click', (e) =>{
     while (container.firstChild){
         container.removeChild(container.firstChild)
     }
+  
+    creatingDifferentGrid()
+    
 })
+
+function gridSizing(){
+
+    let gridHeight = prompt('How high would you like the grid to be?');
+    let gridWidth = prompt('How wide would you like the grid to be?');
+ 
+    gridHeight = parseInt(gridHeight);
+    gridWidth = parseInt(gridWidth);
+ 
+    let gridSize = [gridHeight, gridWidth];
+ 
+    return gridSize;
+}
