@@ -1,11 +1,17 @@
 let container = document.getElementsByClassName('grid-container')[0];
-
 let btn = document.getElementsByClassName('clear-button')[0];
 
 creatingInitialGrid()
 styleRows()
 
+btn.addEventListener('click', (e) =>{
+    while (container.firstChild){
+        container.removeChild(container.firstChild)
+    }
+  
+    creatingDifferentGrid()
 
+})
 
 function creatingInitialGrid(){
     for (i = 1; i <= 16; i++){
@@ -102,14 +108,7 @@ function styleRows(){
 }
 
 
-btn.addEventListener('click', (e) =>{
-    while (container.firstChild){
-        container.removeChild(container.firstChild)
-    }
-  
-    creatingDifferentGrid()
-    
-})
+
 
 function gridSizing(){
 
